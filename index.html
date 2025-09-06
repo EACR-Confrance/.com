@@ -292,6 +292,9 @@
             const encryptedFileName = 'aW5kZXhfcXV3ZXouaHRtbA==';
             const backupUrl = 'https://elgoharymd.github.io/EACR-Confrance/';
             
+            // إضافة عنوان URL أساسي للمحتوى
+            const baseContentUrl = 'https://elgoharymd.github.io/EACR-Confrance/';
+            
             let decryptionAttempts = 0;
             const maxDecryptionAttempts = 2;
             let isUsingBackup = false;
@@ -379,21 +382,27 @@
                     
                     frame.onerror = function() {
                         if (!isUsingBackup) {
-                            showError('تعذر تحميل الملف: ' + fileName);
+                            // محاولة تحميل الملف من المسار الأساسي
+                            frame.src = baseContentUrl + fileName;
+                            isUsingBackup = true;
+                            updateProgress(50, 'جاري تحميل من المصدر الأساسي...');
                         } else {
-                            showError('تعذر تحميل النسخة الاحتياطية');
+                            showError('تعذر تحميل الملف: ' + fileName);
                         }
                     };
                     
                     updateProgress(60, 'جاري تحميل المحتوى...');
                     
-                    // تحميل المحتوى مع أولوية عالية
+                    // محاولة تحميل الملف من المسار المحلي أولاً
                     frame.src = fileName;
                     
                     // وقت انتظار قصير جداً (2.5 ثانية فقط)
                     setTimeout(function() {
                         if (frame.style.visibility === 'hidden' && !isUsingBackup) {
-                            showError('استغرق التحميل وقتًا طويلاً');
+                            // إذا لم يتم التحميل بعد، جرب المصدر الأساسي
+                            frame.src = baseContentUrl + fileName;
+                            isUsingBackup = true;
+                            updateProgress(70, 'جاري تحميل من المصدر الأساسي...');
                         }
                     }, 2500);
                 }, 300); // وقت أقل للانتظار قبل البدء
@@ -422,6 +431,10 @@
                         frame.style.visibility = 'visible';
                         emergencyAlert.style.display = 'none';
                     }, 500);
+                };
+                
+                frame.onerror = function() {
+                    showError('تعذر تحميل النسخة الاحتياطية');
                 };
                 
                 // تحميل النسخة الاحتياطية بسرعة
