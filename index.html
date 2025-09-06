@@ -1464,7 +1464,7 @@
                 </div>
                 <div class="sidebar-item" data-section="papers">
                     <i class="fas fa-file-alt sidebar-icon"></i>
-                    <span class="sidebar-label">الأوراق العلمية</span>
+                    <span class="sidebar-label">عن المؤتمر</span>
                 </div>
                 <div class="sidebar-item" data-section="gallery">
                     <i class="fas fa-images sidebar-icon"></i>
@@ -1515,7 +1515,7 @@
                         <div class="action-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
-                        <span class="action-label">الأوراق العلمية</span>
+                        <span class="action-label">عن المؤتمر</span>
                     </div>
                     <div class="action-btn" data-section="location">
                         <div class="action-icon">
@@ -1706,12 +1706,90 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <!-- Papers Section -->
             <section id="papers" class="section">
-                <h2 class="section-title"><i class="fas fa-file-alt"></i> الأوراق العلمية</h2>
-                <div id="papersContainer" class="cards-grid">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                    </div>
-                </div>
+                <h2 class="section-title"><i class="fas fa-file-alt"></i> عن المؤتمر</h2>
+<div class="youtube-videos-container">
+  <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/QOWPfwt8bZQ" allowfullscreen></iframe>
+    <div class="video-title">عن المؤتمر</div>
+  </div>
+
+  <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/2YsKTTYH9Hg" allowfullscreen></iframe>
+    <div class="video-title">عن الجمعيه</div>
+  </div>
+
+  <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/O_9gv5YCNQo" allowfullscreen></iframe>
+    <div class="video-title">تقديم عن الجمعيه</div>
+  </div>
+ 
+
+  <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/KoXadAWdQ1I" allowfullscreen></iframe>
+    <div class="video-title">الجمعيه المصريه لأبحاث السرطان</div>
+    <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/eIPnmLrk3KA" allowfullscreen></iframe>
+    <div class="video-title">المؤتمر الثانوي للجمعيه المصريه لابحاث السرطان</div>
+  </div>
+</div>
+
+</div>
+
+
+<style>
+  .youtube-videos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+  }
+
+  .video-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  }
+
+  .video-item iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* يحافظ على نسبة العرض */
+    border: none;
+  }
+
+  .video-title {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px;
+    color: #333;
+    background: linear-gradient(to right, #e3f2fd, #f9f9f9);
+  }
+
+  /* تأثير عند تمرير الماوس على العنوان */
+  .video-item:hover .video-title {
+    color: #1976d2;
+  }
+
+  /* تحسين للموبايل */
+  @media (max-width: 600px) {
+    .youtube-videos-container {
+      padding: 10px;
+      gap: 12px;
+    }
+    .video-title {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+</style>
             </section>
 
             <!-- Gallery Section -->
@@ -1809,7 +1887,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="nav-item" data-section="papers">
                 <i class="fas fa-file-pdf nav-icon"></i>
-                <span class="nav-label">الأوراق</span>
+                <span class="nav-label">عن المؤتمر</span>
             </div>
             <div class="nav-item" id="moreNavBtn">
                 <i class="fas fa-ellipsis-h nav-icon"></i>
@@ -1853,7 +1931,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="tab" data-tab="agenda">الجدول</div>
                     <div class="tab" data-tab="speakers">المتحدثون</div>
                     <div class="tab" data-tab="committee">لجنة المؤتمر</div>
-                    <div class="tab" data-tab="papers">الأوراق العلمية</div>
+                    <div class="tab" data-tab="papers">عن المؤتمر</div>
                     <div class="tab" data-tab="gallery">معرض الصور</div>
                 </div>
                 
@@ -2564,7 +2642,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     papersContainer.innerHTML = `
                         <div class="empty-state">
                             <i class="fas fa-exclamation-triangle empty-icon"></i>
-                            <p class="empty-text">حدث خطأ في تحميل الأوراق العلمية</p>
+                            <p class="empty-text">حدث خطأ في تحميل عن المؤتمر</p>
                         </div>
                     `;
                 });
