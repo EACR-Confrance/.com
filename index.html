@@ -1860,6 +1860,12 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/u8KnpcLdBBA?si=bi_-6YqdQtM1QmIs" allowfullscreen></iframe>
+    <div class="video-title">المؤتمر السنوي لأبحاث السرطان</div>
+  </div>
+
+
+  <div class="video-item">
     <iframe src="https://www.youtube.com/embed/2YsKTTYH9Hg" allowfullscreen></iframe>
     <div class="video-title">عن الجمعيه</div>
   </div>
@@ -1994,7 +2000,91 @@ document.addEventListener('DOMContentLoaded', function() {
                             </a>
                         </div>
                     </div>
+                    <div style="display:flex;justify-content:center;align-items:center;margin:40px 0;">
+  <button onclick="window.open('https://youtu.be/f0Q_tG-AIXU?si=UwE5C2rDheKxzR84','_blank')" 
+  style="
+    all: unset;
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px 26px;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease-in-out;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    text-align:center;
+    user-select:none;
+  "
+  onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.35)'"
+  onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.25)'"
+  onmousedown="this.style.transform='scale(0.96)';"
+  onmouseup="this.style.transform='translateY(-4px)';">عن المدينه
+  </button>
+</div>
                 </div>
+                 
+
+</div>
+
+
+<style>
+  .youtube-videos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+  }
+
+  .video-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  }
+
+  .video-item iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* يحافظ على نسبة العرض */
+    border: none;
+  }
+
+  .video-title {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px;
+    color: #333;
+    background: linear-gradient(to right, #e3f2fd, #f9f9f9);
+  }
+
+  /* تأثير عند تمرير الماوس على العنوان */
+  .video-item:hover .video-title {
+    color: #1976d2;
+  }
+
+  /* تحسين للموبايل */
+  @media (max-width: 600px) {
+    .youtube-videos-container {
+      padding: 10px;
+      gap: 12px;
+    }
+    .video-title {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+</style>
             </section>
 
             <!-- Contact Section -->
